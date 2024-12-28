@@ -1,11 +1,12 @@
 import { FormAddPost } from "./FormAddPosts";
-import { Posts } from "./Posts";
+ import { Posts } from "./Posts";
 
-export function Main({ posts, onAddPost }) {
+export function Main({ PostContext }) {
+
     return (
       <main>
-        <FormAddPost onAddPost={onAddPost} />
-        <Posts posts={posts} />
+        <FormAddPost PostContext={PostContext} />
+        <Posts PostContext={PostContext}/>
       </main>
     );
   }

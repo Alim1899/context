@@ -4,6 +4,7 @@ import { faker } from "@faker-js/faker";
 import { Main } from "./components/Main";
 import { Archive } from "./components/Archive";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 function createRandomPost() {
   return {
@@ -67,25 +68,16 @@ function App() {
           {isFakeDark ? "☀️" : "🌙"}
         </button>
 
-        <Header
-          posts={posts}
-          onClearPosts={handleClearPosts}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
-        <Main posts={posts} onAddPost={handleAddPost} />
+        <Header PostContext={PostContext} />
+        <Main PostContext={PostContext} />
         <Archive
-          onAddPost={handleAddPost}
+          PostContext={PostContext}
           createRandomPost={createRandomPost}
         />
         <Footer />
       </section>
     </PostContext.Provider>
   );
-}
-
-function Footer() {
-  return <footer>&copy; by The Atomic Blog ✌️</footer>;
 }
 
 export default App;

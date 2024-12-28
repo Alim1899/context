@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-export function FormAddPost({ onAddPost }) {
+export function FormAddPost({ PostContext }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
+const {onAddPost} = useContext(PostContext)
   const handleSubmit = function (e) {
     e.preventDefault();
     if (!body || !title) return;
