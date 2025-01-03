@@ -1,6 +1,5 @@
-import { useContext } from "react";
+export function Results({ usePosts }) {
+  const posts = usePosts();
 
-export function Results({ PostContext }) {
-  const {posts} =  useContext(PostContext)
-  return <p>🚀 {posts.length} atomic posts found</p>;
+  return <p>🚀 {posts.posts.length} atomic posts found</p>;
 }
